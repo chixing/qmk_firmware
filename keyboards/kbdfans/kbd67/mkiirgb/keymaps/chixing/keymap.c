@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_TRNS,       KC_TRNS,   KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
             KC_TRNS,  KC_TRNS,  KC_TRNS,     C(S(KC_TAB)),  C(KC_TAB), KC_TRNS,   KC_TRNS, KC_BSPC, KC_DEL,  KC_TRNS, KC_PGUP, KC_HOME, KC_TRNS, KC_TRNS,  KC_TRNS,
             KC_TRNS,  KC_TRNS,  A(KC_LEFT),  A(KC_RIGHT),   KC_TRNS,   KC_TRNS,   KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_PGDN, KC_END,           KC_TRNS,  KC_TRNS,
-            KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_TRNS,       KC_TRNS,   KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,  KC_TRNS,
+            KC_TRNS,  KC_TRNS,  G(KC_LBRC),  G(KC_RBRC),    KC_TRNS,   KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,  KC_TRNS,
             KC_TRNS,  KC_TRNS,  KC_TRNS,                               KC_TRNS,                     KC_TRNS,          KC_TRNS, KC_TRNS,          KC_TRNS,  KC_TRNS),
         [_SYMBOLS_RIGHT] = LAYOUT_65_ansi_blocker(
             KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
