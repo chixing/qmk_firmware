@@ -4,7 +4,7 @@
 #define _WINDOWS 2
 #define _NUMPAD 3
 #define _CAPSLOCK 4
-#define _SYMBOLS_RIGHT 6
+#define _SYMBOLS_RIGHT 5
 #define _BRACKETS 6
 #define _SYMBOLS_LEFT 7
 #define _GAMING 8
