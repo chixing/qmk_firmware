@@ -19,3 +19,9 @@ Flashing example for this keyboard:
 **Bootloader:** Press the physical reset button on the bottom side of the PCB (labeled SW1) or hold down ESC while plugging in the board.
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+
+
+# CANNOT FIND OUT HOW TO PUT QK65 INTO BOOTLOADER MODE
+
+using vial instead
+config saved in google drive
