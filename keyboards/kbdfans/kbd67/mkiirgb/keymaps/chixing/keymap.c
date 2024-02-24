@@ -20,7 +20,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		[_WINDOWS] = LAYOUT_65_ansi_blocker( /* Base */
-			LT(9, KC_GRV),  KC_1,          KC_2,          KC_3,         KC_4,          KC_5,           KC_6,        KC_7,         KC_8,            KC_9,            KC_0,            KC_MINS,  KC_EQL,  KC_BSPC,   TG(2),
+			LALT_T(KC_GRV), KC_1,          KC_2,          KC_3,         KC_4,          KC_5,           KC_6,        KC_7,         KC_8,            KC_9,            KC_0,            KC_MINS,  KC_EQL,  KC_BSPC,   TG(2),
 		    KC_TAB,         KC_Q,          KC_W,          KC_E,         KC_R,          KC_T,           KC_Y,        KC_U,         KC_I,            KC_O,            KC_P,            KC_LBRC,  KC_RBRC, KC_BSLS,   TO(8),
 			LT(4, KC_ESC),  KC_A,          LT(5, KC_S),   LT(3, KC_D),  LT(6, KC_F),   LT(9, KC_G),    KC_H,        KC_J,         KC_K,            KC_L,            LT(7, KC_SCLN),  KC_QUOT,           KC_ENT,    KC_VOLU,
 		    KC_LSFT,        LCTL_T(KC_Z),  LSFT_T(KC_X),  LALT_T(KC_C), LGUI_T(KC_V),  KC_B,           KC_N,        LGUI_T(KC_M), LALT_T(KC_COMM), LSFT_T(KC_DOT),  LCTL_T(KC_SLSH), KC_RSFT,           KC_UP,     KC_VOLD,
