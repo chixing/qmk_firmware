@@ -51,7 +51,7 @@
     "bootloader": "lufa-ms",
     "features": {
         "bootmagic": true,
-        "mousekey": false,
+        "mousekey": true,
         "extrakey": true,
         "nkro": true,
         "rgb_matrix": true
