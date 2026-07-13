@@ -1,0 +1,81 @@
+// Copyright 2026 chixing
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#include QMK_KEYBOARD_H
+
+enum layers {
+    _BASE,
+    _FN,
+    _NUMPAD,
+    _NAV,
+    _SYMBOLS_RIGHT,
+    _BRACKETS,
+    _SYMBOLS_LEFT,
+    _MOUSE,
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_BASE] = LAYOUT_65_ansi_blocker(
+        LALT_T(KC_GRV), KC_1,          KC_2,          KC_3,         KC_4,          KC_5,           KC_6,        KC_7,         KC_8,            KC_9,            KC_0,            KC_MINS, KC_EQL,  KC_BSPC, KC_DEL,
+        KC_TAB,         KC_Q,          KC_W,          KC_E,         KC_R,          KC_T,           KC_Y,        KC_U,         KC_I,            KC_O,            KC_P,            KC_LBRC, KC_RBRC, KC_BSLS, KC_DEL,
+        LT(_NAV, KC_ESC), KC_A,        LT(_SYMBOLS_RIGHT, KC_S), LT(_NUMPAD, KC_D), LT(_BRACKETS, KC_F), LT(_MOUSE, KC_G), KC_H, KC_J, KC_K, KC_L, LT(_SYMBOLS_LEFT, KC_SCLN), KC_QUOT, KC_ENT, KC_VOLU,
+        KC_LSFT,        LCTL_T(KC_Z),  LSFT_T(KC_X),  LALT_T(KC_C), LGUI_T(KC_V),  KC_B,           KC_N,        LGUI_T(KC_M), LALT_T(KC_COMM), LSFT_T(KC_DOT), LCTL_T(KC_SLSH), KC_RSFT, KC_UP,   KC_VOLD,
+        KC_LCTL,        KC_LALT,       KC_LGUI,                     KC_SPC,                        HYPR(KC_NO), MO(_FN),                                                       KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+
+    [_FN] = LAYOUT_65_ansi_blocker(
+        QK_BOOT, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_BRIU,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_BRID,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_NUMPAD] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSLS, KC_7,    KC_8,    KC_9,    KC_PMNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PAST, KC_4,    KC_5,    KC_6,    KC_PPLS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_0,    KC_1,    KC_2,    KC_3,    KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_NAV] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,       KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,    C(S(KC_TAB)),  C(KC_TAB), KC_TRNS, KC_TRNS, KC_BSPC, KC_DEL,  KC_ENT,   KC_PGUP, KC_HOME, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, A(KC_LEFT), A(KC_RGHT),    KC_TRNS,   KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_PGDN, KC_END,           KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, G(KC_LBRC), G(KC_RBRC),    KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                                KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_SYMBOLS_RIGHT] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINS, KC_EQL,  KC_BSLS, KC_GRV,  KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UNDS, KC_PLUS, KC_PIPE, KC_TILD, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_BRACKETS] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LPRN, KC_LCBR, KC_LBRC, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_RPRN, KC_RCBR, KC_RBRC, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_SYMBOLS_LEFT] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
+    [_MOUSE] = LAYOUT_65_ansi_blocker(
+        KC_TRNS, MS_ACL0,  MS_ACL1,  MS_ACL2,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MS_LEFT,  MS_DOWN,  MS_UP,    MS_RGHT,  KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1,  MS_BTN2,  MS_BTN3,  KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+};
