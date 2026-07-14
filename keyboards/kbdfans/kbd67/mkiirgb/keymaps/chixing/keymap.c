@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_LSFT,        LCTL_T(KC_Z),  LSFT_T(KC_X),  LALT_T(KC_C), LGUI_T(KC_V),  LT(_FKEYS_LIGHTING, KC_B), KC_N, LGUI_T(KC_M), LALT_T(KC_COMM), LSFT_T(KC_DOT), LCTL_T(KC_SLSH), KC_RSFT, KC_UP, KC_VOLD,
             KC_LCTL,        KC_LGUI,       KC_LALT,                     KC_SPC,                        KC_HYPR,     KC_MEH,                                                         KC_LEFT,           KC_DOWN,   KC_RIGHT),
         [_FKEYS_LIGHTING] = LAYOUT_65_ansi_blocker( /* FN */
-            QK_BOOT,  KC_F1,    KC_F2,   KC_F3,  KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_DEL,        KC_TRNS,
-                    KC_TRNS,  RM_TOGG,  RM_NEXT, RM_HUEU,RM_HUED, RM_SATU, RM_SATD, RM_VALU, RM_VALD, KC_TRNS, KC_PSCR,  KC_SCRL, KC_PAUS, KC_TRNS,       KC_TRNS,
-                        KC_TRNS,  RM_SPDU,  RM_SPDD, KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,          EE_CLR,        KC_TRNS,
-            KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,          G(KC_TAB),     KC_MUTE,
+            QK_BOOT,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL,        KC_TRNS,
+                    KC_TRNS,  RM_TOGG,  RM_NEXT, RM_HUEU, RM_HUED, RM_SATU, RM_SATD, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,
+                        KC_TRNS,  RM_VALU,  RM_VALD, RM_SPDU, RM_SPDD, KC_TRNS, KC_TRNS, KC_F4, KC_F5, KC_F6, KC_F11, KC_TRNS,          EE_CLR,        KC_TRNS,
+            KC_TRNS,  KC_PSCR,  KC_SCRL, KC_PAUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F12,          G(KC_TAB),     KC_MUTE,
             KC_TRNS,  KC_TRNS,  KC_TRNS,                  KC_TRNS,                   KC_TRNS,          KC_TRNS,  C(G(KC_LEFT)),    C(A(KC_TAB)),  C(G(KC_RIGHT))),
         [_MAC] = LAYOUT_65_ansi_blocker(
             KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
