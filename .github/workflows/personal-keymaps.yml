@@ -1,0 +1,52 @@
+name: Personal keymap builds
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/qmk/qmk_cli@sha256:cd9eb2923030b02135bac2c8d7d81d563c2b17776b4461ff98186848e57253de
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - keyboard: kbdfans/kbd67/mkiirgb/v3
+            keymap: chixing
+            artifact: kbd67-v3-chixing
+          - keyboard: qwertykeys/qk65/r2
+            keymap: chixing
+            artifact: qk65-r2-chixing
+          - keyboard: qwertykeys/qk65/r2
+            keymap: default
+            artifact: qk65-r2-default
+          - keyboard: qwertykeys/qk65/hotswap
+            keymap: default
+            artifact: qk65-hotswap-default
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          submodules: recursive
+      - name: Compile without flashing
+        run: qmk compile -kb '${{ matrix.keyboard }}' -km '${{ matrix.keymap }}' -j 2
+      - name: Record candidate checksums
+        run: |
+          for candidate in ./*.bin ./*.hex; do
+            if test -f "$candidate"; then sha256sum "$candidate"; fi
+          done > SHA256SUMS
+          test -s SHA256SUMS
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: ${{ matrix.artifact }}-${{ github.sha }}
+          path: |
+            *.bin
+            *.hex
+            SHA256SUMS
+          if-no-files-found: error
+          retention-days: 30
