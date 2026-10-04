@@ -36,7 +36,11 @@ jobs:
       - name: Compile without flashing
         run: qmk compile -kb '${{ matrix.keyboard }}' -km '${{ matrix.keymap }}' -j 2
       - name: Record candidate checksums
-        run: sha256sum ./*.bin ./*.hex > SHA256SUMS 2>/dev/null || test -s SHA256SUMS
+        run: |
+          for candidate in ./*.bin ./*.hex; do
+            if test -f "$candidate"; then sha256sum "$candidate"; fi
+          done > SHA256SUMS
+          test -s SHA256SUMS
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ${{ matrix.artifact }}-${{ github.sha }}
